@@ -22,7 +22,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   //botResponse = cool();
-  botResponse ='Fuck Yeah baby its friday';
+  botResponse ='sexy sex time';
 
   options = {
     hostname: 'api.groupme.com',
