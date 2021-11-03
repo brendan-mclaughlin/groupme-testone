@@ -22,8 +22,9 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   //botResponse = cool();
+  for(i =0; i < 50; i ++){
   botResponse ='sexy sex time';
-
+  }
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
