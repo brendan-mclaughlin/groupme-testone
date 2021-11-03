@@ -9,7 +9,9 @@ function respond() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
+    for(i =0; i < 50; i ++){
     postMessage();
+    }
     this.res.end();
   } else {
     console.log("don't care");
@@ -22,9 +24,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   //botResponse = cool();
-  for(i =0; i < 50; i ++){
-  botResponse ='sexy sex time';
-  }
+  botResponse ='BOOOOF';
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
