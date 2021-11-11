@@ -3,7 +3,7 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-    botRegex =  /ChangeGroup$/;
+    botRegex =  /Father$/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage();
@@ -16,25 +16,16 @@ function respond() {
 }
 function postMessage() {
   var botResponse, options, body, botReq;
-
   //botResponse = cool();
-  
   botResponse ='Always watching my children';
-
   options = {
     hostname: 'api.groupme.com',
-    path: '/v3/groups/76428023/update',
+    path: '/v3/bots/post',
     method: 'POST'
   };
-  // body = {
-  //   "bot_id" : botID,
-  //   "text" : botResponse
-  // };
   body = {
-    "name" : "PUCK CHOPS PEOPLE",
-    "share": true,
-    "image_url" : "https://static.cycloneshockey.com/images/events/57bf2d19ef92a.jpg",
-    "office_mode": true
+    "bot_id" : botID,
+    "text" : botResponse
   };
   console.log('sending ' + botResponse + ' to ' + botID);
   botReq = HTTPS.request(options, function(res) {
