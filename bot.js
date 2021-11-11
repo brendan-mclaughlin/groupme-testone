@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       //botRegex = /^\/endgroupme$/;
-  botRegex='Brotherhood spotlights';
+  botRegex='Daddy?';
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -18,62 +18,24 @@ function respond() {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
-  }
-  // if(request.text){
-  //   switch(botRegex){
-  //         case 'Brotherhood spotlights':
-  //           this.res.writeHead(200);
-  //           var text ='fuck';
-  //           postMessage(text);
-  //           this.res.end();
-  //         break;
-          
-  //         case 'change':
-  //         this.res.writeHead(200);
-  //         var text ='fuck';
-  //         postMessage(text);
-  //         this.res.end();
-  //         break;
-  //         default:
-  //           console.log("don't care");
-  //           this.res.writeHead(200);
-  //           this.res.end();
-  //         break;
-  //     }
-
-  //  }
-
-  
-}
+  } 
+} 
 
 function postMessage(botResponce) {
   var options, body, botReq;
 
-  //botResponse = cool();
- // botResponse ='Shut the fuck up rogers';
+  botResponse ='Always watching my children';
  
-  // options = {
-  //   hostname: 'api.groupme.com',
-  //   path: '/v3/bots/post',
-  //   method: 'POST'
-  // 
-//}
   options = {
     hostname: 'api.groupme.com',
-    path: '/v3/groups/:id/update',
+    path: '/v3/bots/post',
     method: 'POST'
-  };
+}
 
-   body = {
-    "name" : "XXXXXXX",
-    "share": true,
-    "image_url" : "https://i.groupme.com/123456789",
-    "office_mode": true
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
   };
-  // body = {
-  //   "bot_id" : botID,
-  //   "text" : botResponse
-  // };
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
