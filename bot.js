@@ -21,7 +21,7 @@ function respond() {
   } 
 } 
 
-function postMessage(botResponce) {
+function postMessage(botResponse) {
   var options, body, botReq;
 
   botResponse ='Always watching my children';
